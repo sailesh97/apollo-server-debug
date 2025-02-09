@@ -182,6 +182,8 @@ export default function plugin<TContext extends BaseContext>(
       const generateCacheKey: GenerateCacheKeyFunction =
         options.generateCacheKey ?? ((_, key) => sha(JSON.stringify(key)));
 
+      console.log('Cache in requestDidStart---', cache)
+
       let sessionId: string | null = null;
       let baseCacheKey: BaseCacheKeyData | null = null;
       let age: number | null = null;
